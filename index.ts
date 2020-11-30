@@ -1,28 +1,17 @@
-var tdElements = document.getElementsByTagName("TD");
+var tdElements = document.getElementsByTagName('TD');
+var isO = false;
 
-for (var tdElement of tdElements) {
-  tdElement.addEventListener("click", handleClick);
+for(var tdElement of tdElements) {
+  tdElement. addEventListener('click', handleClick);
 }
+
 function handleClick(event) {
   var target = event.target;
-
-    
-  target.innerHTML = "O"
-  var arrayOfAnything = [
-  1,
-  true,
-  "a",
-  "hello",
-  {
-    testProperty: false
-  },
-  function() {
-    alert("I'm a function");
+  if (isO) {
+    target.innerHTML = 'O';
+    isO = false;
+  } else {
+   target.innerHTML = 'X'; 
+   isO = true;
   }
-];
-
-// alert("arrayOfAnything.length: " + arrayOfAnything.length); 
-
-
 }
-
