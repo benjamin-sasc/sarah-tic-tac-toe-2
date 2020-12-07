@@ -1,17 +1,23 @@
-var tdElements = document.getElementsByTagName('TD');
-var isO = false;
+import "./style.css";
 
-for(var tdElement of tdElements) {
-  tdElement. addEventListener('click', handleClick);
+var tdElements = document.getElementsByTagName("TD");
+
+for (var tdElement of tdElements) {
+  tdElement.addEventListener("click", handleClick);
 }
+
+var isTheClickForAnO = false;
 
 function handleClick(event) {
-  var target = event.target;
-  if (isO) {
-    target.innerHTML = 'O';
-    isO = false;
+  var targetTd = event.target;
+
+  if (isTheClickForAnO) {
+    targetTd.innerHTML = "O";
+    targetTd.classList.add("O");
+    isTheClickForAnO = false;
   } else {
-   target.innerHTML = 'X'; 
-   isO = true;
+    targetTd.innerHTML = "X";
+    targetTd.classList.add("X");
+    isTheClickForAnO = true;
   }
-}
+} 
