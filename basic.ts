@@ -4,11 +4,10 @@ var tdElements = document.getElementsByTagName("TD");
 
 var board = [
   //
-  [null, null, null], //
-  [null, null, null], //
-  [null, null, null] //
+  [null, null, null], // rowIndex="0"
+  [null, null, null], // rowIndex="1"
+  [null, null, null] // rowIndex="2"
 ];
-
 
 for (var tdElement of tdElements) {
   tdElement.addEventListener("click", handleClick);
@@ -27,4 +26,4 @@ function handleClick(event) {
     targetTd.classList.add("X");
     isTheClickForAnO = true;
   }
-} 
+}
